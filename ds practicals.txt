@@ -1,0 +1,400 @@
+1. Write a program to demonstrate different numbers data types in python
+
+a=5
+print(type(a))
+print(type(5.0))
+c=5+3j
+print(c+3)
+print(isinstance(c, complex))
+
+output:
+
+      <class 'int'>
+      <class 'float'>
+      (8+3j)
+       True
+
+
+print(0b1101011)
+print(0xFB + 0b10)
+print(0o15)
+
+output:
+        107
+        253
+        13
+
+
+print(int(2.3))
+print(int(-2.8))
+print(float(5))
+print(complex('3+5j'))
+
+ output:  
+          2
+          -2
+          5.0
+          (3+5j)
+
+
+2. Write a python program to design simple calculator using functions
+
+# Python program for simple calculator
+
+# Function to add two numbers
+def add(num1, num2):
+	return num1 + num2
+
+# Function to subtract two numbers
+def subtract(num1, num2):
+	return num1 - num2
+
+# Function to multiply two numbers
+def multiply(num1, num2):
+	return num1 * num2
+
+# Function to divide two numbers
+def divide(num1, num2):
+	return num1 / num2
+
+print("Please select operation -\n" \
+		"1. Add\n" \
+		"2. Subtract\n" \
+		"3. Multiply\n" \
+		"4. Divide\n")
+
+
+# Take input from the user
+select = int(input("Select operations form 1, 2, 3, 4 :"))
+
+number_1 = int(input("Enter first number: "))
+number_2 = int(input("Enter second number: "))
+
+if select == 1:
+	print(number_1, "+", number_2, "=",
+					add(number_1, number_2))
+
+elif select == 2:
+	print(number_1, "-", number_2, "=",
+					subtract(number_1, number_2))
+
+elif select == 3:
+	print(number_1, "*", number_2, "=",
+					multiply(number_1, number_2))
+
+elif select == 4:
+	print(number_1, "/", number_2, "=",
+					divide(number_1, number_2))
+else:
+	print("Invalid input")
+
+3.  Write a python program to check whether a given number is Armstrong number or not
+
+ # Python program to check if the number is an Armstrong number or not
+
+# take input from the user
+num = int(input("Enter a number: "))
+
+# initialize sum
+sum = 0
+
+# find the sum of the cube of each digit
+temp = num
+while temp > 0:
+   digit = temp % 10
+   sum += digit ** 3
+   temp //= 10
+
+# display the result
+if num == sum:
+   print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
+
+4. Write a python program to generate prime numbers between different intervals.
+
+
+# Python3 program to find the prime
+# numbers between a given interval
+
+if __name__ == '__main__':
+	
+	# Declare the variables
+	a, b, i, j, flag = 0, 0, 0, 0, 0
+
+	# Ask user to enter lower value of interval
+	print("Enter lower bound of the interval:",
+									end = "")
+	a = int(input()) # Take input
+	print(a)
+	
+	# Ask user to enter upper value of interval
+	print("Enter upper bound of the interval:",
+									end = "")
+	b = int(input()) # Take input
+	print(b)
+	
+	# Print display message
+	print("Prime numbers between", a, "and",
+						b, "are:", end = "")
+
+	# Traverse each number in the interval
+	# with the help of for loop
+	for i in range(a, b + 1):
+
+		# Skip 1 as1 is neither
+		# prime nor composite
+		if (i == 1):
+			continue
+
+		# flag variable to tell
+		# if i is prime or not
+		flag = 1
+		
+		for j in range(2, i // 2 + 1):
+			if (i % j == 0):
+				flag = 0
+				break
+			
+		# flag = 1 means i is prime
+		# and flag = 0 means i is not prime
+		if (flag == 1):
+			print(i, end = " ")
+			
+
+
+
+5. Write a python program to find factorial of a number using recursion.
+
+# Factorial of a number using recursion
+
+def recur_factorial(n):
+   if n == 1:
+       return n
+   else:
+       return n*recur_factorial(n-1)
+
+num =int(input("enter a number:"))
+
+# check if the number is negative
+if num < 0:
+   print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   print("The factorial of", num, "is", recur_factorial(num))
+
+6. Write a python program to check whether a string is palindrome or not.
+
+my_string=input("Enter string:")
+if(my_string==my_string[::-1]):
+   print("The string is a palindrome")
+else:
+   print("The string isn't a palindrome")
+
+7. Write a python program to count the number of characters present in a word
+
+word_count = 0
+char_count = 0
+
+
+usr_input = input("Enter a string : ")
+
+
+split_string = usr_input.split()
+
+
+word_count = len(split_string)
+
+
+for word in split_string:
+    #6
+    char_count += len(word)
+
+
+print("Total words : {}".format(word_count))
+print("Total characters : {}".format(char_count))
+
+8. Write a python program to create, append and remove lists.
+
+my_list = ['geeks', 'for']
+my_list.append('geeks')
+print my_list
+
+
+output: ['geeks', 'for', 'geeks']
+
+my_list=['p','r','o','b','l','e','m']
+my_list.remove('p')
+print(my_list)
+print(my_list.pop(1))
+print(my_list)
+print(my_list.pop())
+print(my_list)
+my_list.clear()
+print(my_list)
+
+output: 
+['r', 'o', 'b', 'l', 'e', 'm']
+o
+['r', 'b', 'l', 'e', 'm']
+m
+['r', 'b', 'l', 'e']
+[]
+
+
+9. Write a program to demonstrate working with tuples in python.
+
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple)
+
+output: ('apple', 'banana', 'cherry')
+
+
+10. Write a program to demonstrate dictionaries in python.
+
+
+# Creating an empty Dictionary
+Dict = {}
+print("Empty Dictionary: ")
+print(Dict)
+
+# Creating a Dictionary
+# with dict() method
+Dict = dict({1: 'Geeks', 2: 'For', 3:'Geeks'})
+print("\nDictionary with the use of dict(): ")
+print(Dict)
+
+# Creating a Dictionary
+# with each item as a Pair
+Dict = dict([(1, 'Geeks'), (2, 'For')])
+print("\nDictionary with each item as a pair: ")
+print(Dict)
+
+
+11. Python program to demonstrate basic array characteristics
+
+
+import numpy as np
+arr = np.array([[1,2,3],[4,5,6]])
+print(arr)
+
+12. Python program to demonstrate array creation techniques
+
+import numpy as np
+array=np.array(20)
+print(array)
+
+array.shape
+
+13. Python program to demonstrate indexing in numpy
+
+import numpy as np
+
+arr = np.array([[1,2,3,4,5], [6,7,8,9,10]])
+
+print('2nd element on 1st dim: ', arr[0, 1])
+
+
+14. Python program to demonstrate basic operations on single array
+
+import numpy as np
+array1 = np.array([10,20,30,40,50])
+array2 = np.arange(5)
+print(array2)
+
+print(array1*2)
+
+15. Python program to demonstrate unary operators in numpy 
+
+import numpy as np
+data_list=[]
+for i in range(10):
+    data_list.append(i+1);
+data=np.array(data_list)
+sqrt_data=np.sqrt(data_list)
+print(sqrt_data.reshape(2,5))
+
+
+16. Python code to demonstrate Pandas DataFrame with two-dimensional list
+
+# import pandas as pd
+import pandas as pd
+	
+# List1
+lst = [['Geek', 25], ['is', 30],
+	['for', 26], ['Geeksforgeeks', 22]]
+
+# creating df object with columns specified	
+df = pd.DataFrame(lst, columns =['Tag', 'number'])
+print(df )
+
+
+17. Python code to demonstrate creating DataFrame from dictionary of array and lists
+
+
+# Python code demonstrate creating
+# DataFrame from dict narray / lists
+# By default addresses.
+
+import pandas as pd
+
+# initialise data of lists.
+data = {'Category':['Array', 'Stack', 'Queue'],
+		'Marks':[20, 21, 19]}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Print the output.
+print(df )
+
+
+18. Python code to demonstrate creating a Pandas dataframe using list of tuples
+
+# import pandas as pd
+import pandas as pd
+ 
+# list of strings
+lst = ['Geeks', 'For', 'Geeks', 'is', 
+            'portal', 'for', 'Geeks']
+ 
+# Calling DataFrame constructor on list
+df = pd.DataFrame(lst)
+print(df)
+
+
+19. Python code to demonstrate how to iterate over rows in Pandas Dataframe
+
+
+# importing pandas as pd
+import pandas as pd
+
+# dictionary of lists
+dict = {'name':["aparna", "pankaj", "sudhir", "Geeku"],
+		'degree': ["MBA", "BCA", "M.Tech", "MBA"],
+		'score':[90, 40, 80, 98]}
+
+# creating a dataframe from a dictionary
+df = pd.DataFrame(dict)
+
+# iterating over rows using iterrows() function
+for i, j in df.iterrows():
+	print(i, j)
+	print()
+
+
+
+# Import pandas package
+import pandas as pd
+	
+# making data frame
+data = pd.read_csv("https://media.geeksforgeeks.org/wp-content/uploads/nba.csv")
+	
+# calling head() method
+# storing in new variable
+data_top = data.head()
+	
+# display
+data_top
